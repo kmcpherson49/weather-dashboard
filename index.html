@@ -32,27 +32,27 @@
           <label class="form-label" for="username"></label>
           <input
             name="username"
-            id="username"
+            id="search-city"
             type="text"
             autofocus="true"
             class="form-input"
           />
-          <button type="submit" class="btn">Submit</button>
+          <button type="submit" class="btn" id="search-btn">Submit</button>
         </form>
       </div>
       <div class="row" id="search-history">
         <span></span>
       </div>
       <div class="row" id="weather-info">
-        <h3 id="city-name"></h3>
+        <!-- <h3 id="city-name"></h3>
         <p id="city-temp"></p>
         <p id="city-humidity"></p>
         <p id="city-wind"></p>
-        <p id="city-uxindex"></p>
+        <p id="city-uxindex"></p> -->
       </div>
-      <div class="row">
+      <div class="row" id="5-day-forecast">
         <h3>5-day Forecast:</h3>
-        <span class="weather-tiles" id="day-1">
+        <!-- <span class="weather-tiles" id="day-1">
           <p>Day 1</p>
         </span>
         <span class="weather-tiles" id="day-2">
@@ -66,7 +66,7 @@
         </span>
         <span class="weather-tiles" id="day-5">
           <p>Day 5</p>
-        </span>
+        </span> -->
       </div>
     </main>
     <script
@@ -75,6 +75,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./assets/js/homepage.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
