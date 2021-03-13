@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Weather Dashboard</title>
+  </head>
+
+  <body class="flex-column min-100-vh">
+    <header class="hero">
+      <h1 class="app-title"><i class=""></i> Weather Dashboard</h1>
+    </header>
+
+    <main class="flex-row justify-space-between">
+      <div class="row">
+        <h3 class="container-header text-uppercase">Search for a City:</h3>
+        <form id="user-form" class="search-body">
+          <label class="form-label" for="username"></label>
+          <input
+            name="username"
+            id="username"
+            type="text"
+            autofocus="true"
+            class="form-input"
+          />
+          <button type="submit" class="btn">Submit</button>
+        </form>
+      </div>
+      <div class="row" id="search-history">
+        <span></span>
+      </div>
+      <div class="row" id="weather-info">
+        <h3 id="city-name"></h3>
+        <p id="city-temp"></p>
+        <p id="city-humidity"></p>
+        <p id="city-wind"></p>
+        <p id="city-uxindex"></p>
+      </div>
+      <div class="row">
+        <h3>5-day Forecast:</h3>
+        <span class="weather-tiles" id="day-1">
+          <p>Day 1</p>
+        </span>
+        <span class="weather-tiles" id="day-2">
+          <p>Day 2</p>
+        </span>
+        <span class="weather-tiles" id="day-3">
+          <p>Day 3</p>
+        </span>
+        <span class="weather-tiles" id="day-4">
+          <p>Day 4</p>
+        </span>
+        <span class="weather-tiles" id="day-5">
+          <p>Day 5</p>
+        </span>
+      </div>
+    </main>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/homepage.js"></script>
+  </body>
+</html>
