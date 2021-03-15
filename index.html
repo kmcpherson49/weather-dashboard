@@ -25,14 +25,14 @@
 
   <body class="">
     <header class="hero">
-      <h1 class="app-title"><i class=""></i> Weather Dashboard</h1>
+      <h1 class="app-title text-center bg-info"><i class=""></i> Weather Dashboard</h1>
     </header>
 
     <main class="">
       <div class="container">
         <div class="row ">
-          <div class="col-md-4">
-            <h3 class="container-header text-uppercase">Search for a City:</h3>
+            <div class="col-3 bg-secondary">
+            <h3 class="container-header text-uppercase text-white">Search for a City:</h3>
             <form id="user-form" class="search-body">
               <label class="form-label" for="username"></label>
               <input
@@ -42,19 +42,21 @@
                 autofocus="true"
                 class="form-input"
               />
-              <button type="submit" class="btn" id="search-btn">Submit</button>
+              <button type="submit" class="btn btn-info" id="search-btn">Submit</button>
             </form>
-          </div>
-        </div>
-        <div class="col-md-8">
+          
+        
           <div class="" id="search-history">
             <span></span>
           </div>
+        </div>
+          <div class="col-9">
           <div class="" id="weather-info"></div>
-          <div class="" id="5-day-forecast">
-            <h3>5-day Forecast:</h3>
+          <div class="row row-cols-5" id="5-day-forecast">
+            <h3 class="justify-content">5-day Forecast:</h3>
           </div>
         </div>
+      </div>
       </div>
     </main>
     <script

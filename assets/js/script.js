@@ -2,16 +2,16 @@ $("#search-btn").on("click", function (event) {
   event.preventDefault();
   var userInput = $("#search-city").val();
   
-  localStorage.setItem(userInput);
+  //localStorage.setItem(userInput);
   currentWeather(userInput);
-  loadCity(userInput);
+  //loadCity(userInput);
 
 });
 
-var loadCity = function (userInput) {
-    var storedCity = localStorage.getItem(userInput)
-    $("#search-history").val(storedCity);
-}
+// var loadCity = function (userInput) {
+//     var storedCity = localStorage.getItem(userInput)
+//     $("#search-history").val(storedCity);
+// }
 //WHEN I search for a city THEN I am presented with current and future conditions for that city and that city is added to the search history
 //var apiUrl = "https://api.github.com/users/" + user + "/repos";
 function currentWeather(userInput) {
@@ -26,6 +26,7 @@ function currentWeather(userInput) {
     .then(function (data) {
       console.log(data);
       var cityTitle = $("<h1>").addClass("card-title").text(data.name);
+      //var cityDate = $("<p>").addclass("city-date").text(moment().format("MMM D YYYY"));
       var cityCard = $("<div>").addClass("card");
       var cityCardBody = $("<div>").addClass("card-body");
       var cityCardTemp = $("<p>")
@@ -37,11 +38,9 @@ function currentWeather(userInput) {
       var cityCardWind = $("<p>")
         .addClass("card-text")
         .text("Wind Speed: " + data.wind.speed + "MPH");
-      //var cityLatitude = $("<p>").addClass("card-text").text("Latitude :" + data.coord.lat);
-      //var cityLongitude = $("<p>").addClass("card-text").text("Longitude :" + data.coord.lon);
-      // add uv index, might be in different data var cityCardTemp = $("<p>").addClass("card-text").text("current temperature" + data.main.temp);
       cityCardBody.append(
         cityTitle,
+        //cityDate,
         cityCardTemp,
         cityCardHumidity,
         cityCardWind
@@ -70,6 +69,9 @@ function forecast(userInput) {
       var firstForecastCard = $("<div>").addClass("card-1");
       var firstForecastCardBody = $("<div>").addClass("card-body");
       var firstForecastDay = $("<p>").addClass("dayText").text("Day 1");
+      var firstForecastCardDate = $("<p>")
+        .addClass("card-text")
+        .text(data.list[0].dt_txt);
       var firstForecastCardTemp = $("<p>")
         .addClass("card-text")
         .text("Temperature: " + data.list[0].main.temp + "°F");
@@ -78,6 +80,7 @@ function forecast(userInput) {
         .text("Humidity: " + data.list[0].main.humidity + "%");
       firstForecastCardBody.append(
         firstForecastDay,
+        firstForecastCardDate,
         firstForecastCardTemp,
         firstForecastCardHumidity
       );
@@ -88,6 +91,9 @@ function forecast(userInput) {
       var secondForecastCard = $("<div>").addClass("card-2");
       var secondForecastCardBody = $("<div>").addClass("card-body");
       var secondForecastDay = $("<p>").addClass("dayText").text("Day 2");
+      var secondForecastCardDate = $("<p>")
+        .addClass("card-text")
+        .text(data.list[1].dt_txt);
       var secondForecastCardTemp = $("<p>")
         .addClass("card-text")
         .text("Temperature: " + data.list[1].main.temp + "°F");
@@ -96,6 +102,7 @@ function forecast(userInput) {
         .text("Humidity: " + data.list[1].main.humidity + "%");
       secondForecastCardBody.append(
         secondForecastDay,
+        secondForecastCardDate,
         secondForecastCardTemp,
         secondForecastCardHumidity
       );
@@ -106,6 +113,9 @@ function forecast(userInput) {
       var thirdForecastCard = $("<div>").addClass("card-3");
       var thirdForecastCardBody = $("<div>").addClass("card-body");
       var thirdForecastDay = $("<p>").addClass("dayText").text("Day 3");
+      var thirdForecastCardDate = $("<p>")
+        .addClass("card-text")
+        .text(data.list[2].dt_txt);
       var thirdForecastCardTemp = $("<p>")
         .addClass("card-text")
         .text("Temperature: " + data.list[2].main.temp + "°F");
@@ -114,6 +124,7 @@ function forecast(userInput) {
         .text("Humidity: " + data.list[2].main.humidity + "%");
       thirdForecastCardBody.append(
         thirdForecastDay,
+        thirdForecastCardDate,
         thirdForecastCardTemp,
         thirdForecastCardHumidity
       );
@@ -124,6 +135,9 @@ function forecast(userInput) {
       var fourthForecastCard = $("<div>").addClass("card-4");
       var fourthForecastCardBody = $("<div>").addClass("card-body");
       var fourthForecastDay = $("<p>").addClass("dayText").text("Day 4");
+      var fourthForecastCardDate = $("<p>")
+      .addClass("card-text")
+      .text(data.list[3].dt_txt);
       var fourthForecastCardTemp = $("<p>")
         .addClass("card-text")
         .text("Temperature: " + data.list[3].main.temp + "°F");
@@ -132,6 +146,7 @@ function forecast(userInput) {
         .text("Humidity: " + data.list[3].main.humidity + "%");
       fourthForecastCardBody.append(
         fourthForecastDay,
+        fourthForecastCardDate,
         fourthForecastCardTemp,
         fourthForecastCardHumidity
       );
@@ -142,6 +157,9 @@ function forecast(userInput) {
       var fifthForecastCard = $("<div>").addClass("card-5");
       var fifthForecastCardBody = $("<div>").addClass("card-body");
       var fifthForecastDay = $("<p>").addClass("dayText").text("Day 5");
+      var fifthForecastCardDate = $("<p>")
+      .addClass("card-text")
+      .text(data.list[4].dt_txt);
       var fifthForecastCardTemp = $("<p>")
         .addClass("card-text")
         .text("Temperature: " + data.list[4].main.temp + "°F");
@@ -150,6 +168,7 @@ function forecast(userInput) {
         .text("Humidity: " + data.list[4].main.humidity + "%");
       fifthForecastCardBody.append(
         fifthForecastDay,
+        fifthForecastCardDate,
         fifthForecastCardTemp,
         fifthForecastCardHumidity
       );
@@ -159,7 +178,7 @@ function forecast(userInput) {
 
 }
 
-loadCity();
+//loadCity();
 
 //WHEN I view current weather conditions for that city THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
 
